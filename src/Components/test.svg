@@ -1,0 +1,51 @@
+<svg viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    #L, #I, #F, #E {
+      opacity: 0;
+      font-size: 80px;
+    }
+
+    #L {
+      animation: reveal 1s ease-in-out forwards;
+      animation-delay: 0s;
+      fill: url(gradient);
+    }
+
+    #I {
+      animation: reveal 1s ease-in-out forwards;
+      animation-delay: 1s;
+      fill: #FFA500;
+    }
+
+    #F {
+      animation: reveal 1s ease-in-out forwards;
+      animation-delay: 2s;
+      fill: #0000FF;
+    }
+
+    #E {
+      animation: reveal 1s ease-in-out forwards;
+      animation-delay: 3s;
+      fill: #008000;
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+     <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ff0000" />
+        <stop offset="25%" stop-color="#ff8c00" />
+        <stop offset="50%" stop-color="#0000ff" />
+        <stop offset="75%" stop-color="#008000" />
+        <stop offset="100%" stop-color="#ffff00" />
+        </linearGradient>
+  </defs>
+  <text id="L" x="50" y="80" fill="url(#gradient)">Liiii</text>
+  <text id="I" x="100" y="80">I</text>
+  <text id="F" x="150" y="80">F</text>
+  <text id="E" x="200" y="80">E</text>
+</svg>
