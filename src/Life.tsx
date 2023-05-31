@@ -23,7 +23,7 @@ function Life() {
         
         <IconFadein />
         
-        <div style={{ height: "200vh",backgroundColor:"black"}}>
+        <div style={{ height: "180vh",backgroundColor:"black"}}>
             <h1 className='Life_h1_text'>We are Life 2.0</h1>
             <h2 className='Life_h2_text'>This is one of my favrite songs…『Way Maker』</h2>
               <br></br>
@@ -94,14 +94,11 @@ function Life() {
               <p className='lylcs_text'>My God can</p>
               <p className='lylcs_text'>And my God will</p>
         </div>
-        <div>testtest</div>
-        <div>testtest</div>
-        <div>testtest</div>
         <ReactGenieAnimations />
         <Fadein/>
         <IconFadein />
-        <div style={{ height: "200vh",backgroundColor:"blue" }}>内容1</div>
-        <div>testtest</div>
+        <div style={{ height: "200vh",backgroundColor:"#14094c" }}>内容1</div>
+        <div className='fade-text to__right' style={{height: "30vh",backgroundColor:"black"}}>testdddddddtest</div>
         <div>testtest</div>
         <div>testtest</div>
         <div style={{ height: "200vh",backgroundColor:"green" }}>内容1</div>

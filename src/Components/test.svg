@@ -8,7 +8,7 @@
     #L {
       animation: reveal 1s ease-in-out forwards;
       animation-delay: 0s;
-      fill: url(gradient);
+      fill: #FFA500;
     }
 
     #I {
@@ -44,8 +44,8 @@
         <stop offset="100%" stop-color="#ffff00" />
         </linearGradient>
   </defs>
-  <text id="L" x="50" y="80" fill="url(#gradient)">Liiii</text>
-  <text id="I" x="100" y="80">I</text>
+  <text id="L" x="50" y="80" fill="url(#gradient)">L</text>
+  <text id="I" x="110" y="80">I</text>
   <text id="F" x="150" y="80">F</text>
   <text id="E" x="200" y="80">E</text>
 </svg>
