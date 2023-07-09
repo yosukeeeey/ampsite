@@ -87,6 +87,15 @@ const BasicMenu = () => {
             {'Life 2.0'}
             </Link>
           </MenuItem>
+          <MenuItem>
+            <Link
+              color='inherit'
+              underline="none"
+              href="/Jeberry"
+            >
+            {'Jebbery in 2023'}
+            </Link>
+          </MenuItem>
         </Menu>
       </div>
     );

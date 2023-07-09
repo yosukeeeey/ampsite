@@ -9,9 +9,11 @@ import './App.css';
 import AppBar from './Components/Header/AppBar';
 import IconFadein from './Components/Icon/TitileIcon';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Home from './Home';
 import Story from './Story';
 import Life from './Life';
+import Jeberry from './Jeberry';
 
 function App() {
     
@@ -20,7 +22,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Story" element={<Story />} />
-        <Route path="/Life2.0" element={<Life />} /> 
+        <Route path="/Life2.0" element={<Life />} />
+        <Route path="/Jeberry" element={<Jeberry />} />
       </Routes>
     </BrowserRouter>
     );

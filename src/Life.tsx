@@ -8,6 +8,8 @@ import './App.css';
 import AppBar from './Components/Header/AppBar';
 import IconFadein from './Components/Icon/TitileIcon';
 import './Life.css';
+import { Reveal } from 'react-genie';
+import { Animation } from 'react-genie-styled-components';
 
 const TextCenter ={
     color:"white",
@@ -24,9 +26,15 @@ function Life() {
         <IconFadein />
         
         <div style={{ height: "180vh",backgroundColor:"black"}}>
-            <h1 className='Life_h1_text'>We are Life 2.0</h1>
+            <Reveal animation={Animation.FadeInUp} delay={1000}>
+              <h1 className='Life_h1_text'>We are Life 2.0</h1>
+            </Reveal>
+            <Reveal animation={Animation.FadeInUp} delay={2000}>
             <h2 className='Life_h2_text'>This is one of my favrite songs…『Way Maker』</h2>
+            </Reveal>
+            
               <br></br>
+              <Reveal animation={Animation.FadeInUp} delay={3000}>
               <p className='lylcs_text'>You are here, moving in our midst</p>
               <p className='lylcs_text'>I worship You</p>
               <p className='lylcs_text'>I worship You</p>
@@ -93,13 +101,14 @@ function Life() {
               <p className='lylcs_text'>I know, I know, I know</p>
               <p className='lylcs_text'>My God can</p>
               <p className='lylcs_text'>And my God will</p>
+              </Reveal>
+              
         </div>
         <ReactGenieAnimations />
         <Fadein/>
         <IconFadein />
         <div style={{ height: "200vh",backgroundColor:"#14094c" }}>内容1</div>
         <div className='fade-text to__right' style={{height: "30vh",backgroundColor:"black"}}>testdddddddtest</div>
-        <div>testtest</div>
         <div>testtest</div>
         <div style={{ height: "200vh",backgroundColor:"green" }}>内容1</div>
         <div>testtest</div>

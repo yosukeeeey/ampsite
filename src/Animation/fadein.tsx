@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Reveal, RevealMode, } from 'react-genie'
+import {Reveal, RevealChildren, RevealMode, } from 'react-genie'
 import { Animation,ReactGenieAnimations } from 'react-genie-styled-components';
 import AnimatedText  from './AnimatedText';
 
@@ -11,11 +11,13 @@ const txt1 = "Welcome to LIFEeeeeeeeeeeeN Roooooooom";
 const txt2 = "Thank you coming this page!!!";
 const txt3 = "Please Scroll down......."
 
+
 export const Fadein = () => {
   return (
     <React.Fragment>
+      <ReactGenieAnimations />
       <div style={{backgroundColor:'#090a0e'}}>
-        <Reveal animation={Animation.SlideInRight} mode={RevealMode.Clone}>
+      <Reveal animation={Animation.SlideInRight} mode={RevealMode.Clone} delay={1000}>
           <div>
             <img
                 className='Life_Talk_Blk'
@@ -45,6 +47,7 @@ export const Fadein = () => {
     <div style={{backgroundColor:'#f6f7e9', height:'20vh'}}>
       <AnimatedText text={txt3} />
     </div>
+    
     </React.Fragment>
     
   );
