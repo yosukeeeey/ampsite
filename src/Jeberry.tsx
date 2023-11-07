@@ -133,7 +133,7 @@ function Jeberry() {
                 <Typography variant="h5" textAlign='center'>Others</Typography>
                 <Typography variant="body1" sx={{margin: 2}}></Typography>
             
-                <Box component="a" href="https://www.instagram.com/werlife2.0/" sx={iconStyle}>
+                <Box component="a" href="https://www.instagram.com/life2.0.tcc/" sx={iconStyle}>
                     <img
                         src={`${process.env.PUBLIC_URL}/instagram_icon.png`}
                         alt="Instagram"
