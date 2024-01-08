@@ -1,13 +1,39 @@
+.header{
+  position: fixed;
+}
+
+.h1-title{
+  margin: 2.5% 2.5%;
+  text-align: center;
+  font-size: xx-large;
+}
+.div-space{
+  height: 2.5%;
+  margin-top: 100px;
+}
+
+.body{
+  margin-top: 60px;
+}
+
+.top-body{
+  width: 100%;
+  height: auto;
+  background: linear-gradient(#231d35 0%,#090a0e 100%)
+}
+
 .Life_h1_text{
     color: white;
     margin: auto 0; 
     text-align: center;
 }
 
-.Life_h2_text{
+.Life_top_p_text{
     color: white;
     margin: auto 0; 
     text-align: center;
+    font-size: large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .lylcs_text{

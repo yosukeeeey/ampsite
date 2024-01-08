@@ -4,3 +4,7 @@
         display: none;
     }
 }
+
+.AppBarLife-header{
+    z-index: 2;
+}

@@ -14,6 +14,10 @@ import Home from './Home';
 import Story from './Story';
 import Life from './Life';
 import Jeberry from './Jeberry';
+import MyMapComponent from './Components/Maps/Mymaps';
+import Maps from './Components/Maps/ArcGISmaps';
+import ChurchMapComponent from './ChurchMaps.View';
+import { pins } from './ChurchMaps';
 
 function App() {
     
@@ -23,7 +27,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Story" element={<Story />} />
         <Route path="/Life2.0" element={<Life />} />
+        <Route path="/Life2.0/Church" element={<ChurchMapComponent pins={pins} />} />
         <Route path="/Jeberry" element={<Jeberry />} />
+        <Route path="/MyMap" element={<MyMapComponent/>} />
+        <Route path="/ArcMap" element={<Maps />} />
       </Routes>
     </BrowserRouter>
     );

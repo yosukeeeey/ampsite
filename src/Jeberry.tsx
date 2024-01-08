@@ -135,7 +135,7 @@ function Jeberry() {
             
                 <Box component="a" href="https://www.instagram.com/life2.0.tcc/" sx={iconStyle}>
                     <img
-                        src={`${process.env.PUBLIC_URL}/instagram_icon.png`}
+                        src={`${process.env.PUBLIC_URL}/Instagram_icon.png`}
                         alt="Instagram"
                         width={48}
                         height={48}

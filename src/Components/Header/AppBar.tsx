@@ -96,6 +96,24 @@ const BasicMenu = () => {
             {'Jebbery in 2023'}
             </Link>
           </MenuItem>
+          <MenuItem>
+            <Link
+              color='inherit'
+              underline="none"
+              href="/Mymap"
+            >
+            {'MyMap'}
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link
+              color='inherit'
+              underline="none"
+              href="/ArcMap"
+            >
+            {'ArcMap'}
+            </Link>
+          </MenuItem>
         </Menu>
       </div>
     );
