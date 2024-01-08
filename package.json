@@ -2,7 +2,7 @@
   "name": "ampsite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./Life2.0",
+  "homepage": "./",
   "dependencies": {
     "@arcgis/core": "^4.28.10",
     "@elfalem/leaflet-curve": "^0.9.2",
