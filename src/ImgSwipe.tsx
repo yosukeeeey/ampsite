@@ -1,13 +1,19 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
 import 'swiper/css';
-import slide1 from './Asset/IMG_slide1.jpeg';
-import slide2 from './Asset/IMG_slide2.jpeg';
-import slide3 from './Asset/IMG_slide3.jpeg';
-import slide4 from './Asset/IMG_slide4.jpeg';
+import slide1 from './Asset/IMG_slide1.jpg';
+import slide2 from './Asset/IMG_slide2.jpg';
+import slide3 from './Asset/IMG_slide3.jpg';
+import slide4 from './Asset/IMG_slide4.jpg';
 import './ImgSwipe.css';
 
 export default function Swipe(){
+    const data = [
+        "./Asset/IMG_slide1.jpg",
+        "./Asset/IMG_slide2.jpg",
+        "./Asset/IMG_slide3.jpg",
+        "./Asset/IMG_slide4.jpg"
+    ]
     return(
         <div>
             <Swiper
