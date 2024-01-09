@@ -14,6 +14,7 @@ export default function LifeBlog(){
             <div className="split">
                 <div className="split-item split-left">
                     <div className="split-left__inner">
+                        <br></br>
                         <p className='blog-text'>Life Talk・ブログはこちらから</p> 
                         <p className='blog-text'>日々の出来事をUpdateしています!!</p>
                         <br></br>

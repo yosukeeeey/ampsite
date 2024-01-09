@@ -27,7 +27,7 @@ function Life() {
     return (
       <div>
         
-        <div className="header" style={{ height: "8vh" }}>
+        <div className="header" style={{ height: "auto" }}>
           <AppBarLife flag={true} />
         </div> 
         
