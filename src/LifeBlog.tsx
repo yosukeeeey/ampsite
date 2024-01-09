@@ -25,7 +25,7 @@ export default function LifeBlog(){
                             <p className='blog-text'>”<strong>聖書</strong>の視点から日々の中での葛藤や悩みを捉えてみたり、過去や将来の事などそれぞれの人生を分かちあう時間です”</p>
                             <br></br><br></br>
                             <Button style={{backgroundColor: '#f7dc67', position: 'inherit'}}>
-                                <Link href='/Life2.0/LifeTalk' style={{textAlign: 'center'}}><strong>Show More Life-Talk</strong></Link>
+                                <Link href='/Life2.0/LifeTalk' style={{textAlign: 'center'}}><strong>もっと見る</strong></Link>
                             </Button>
                             
                         </Reveal>
