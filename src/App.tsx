@@ -27,7 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Story" element={<Story />} />
         <Route path="/Life2.0" element={<Life />} />
-        <Route path="/Life2.0/Church" element={<ChurchMapComponent pins={pins} />} />
+        <Route path="/Church" element={<ChurchMapComponent pins={pins} />} />
         <Route path="/Jeberry" element={<Jeberry />} />
         <Route path="/MyMap" element={<MyMapComponent/>} />
         <Route path="/ArcMap" element={<Maps />} />

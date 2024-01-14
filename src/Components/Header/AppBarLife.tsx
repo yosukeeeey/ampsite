@@ -78,7 +78,7 @@ const BasicMenu = () => {
             <Link
               color='inherit'
               underline="none"
-              href="/Life2.0/church"
+              href="/Church"
             >
             {'Our Church'}
             </Link>
