@@ -70,7 +70,7 @@ const ChurchMapComponent: React.FC<MapProps> = ({ pins }) => {
                   <p>
                     <strong>住所:</strong>{' '}
                     <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(pin.address)}`}
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(pin.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
