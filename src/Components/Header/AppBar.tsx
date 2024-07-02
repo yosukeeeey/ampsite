@@ -69,7 +69,7 @@ const BasicMenu = () => {
             {'Home'}
             </Link>
           </MenuItem>
-          <MenuItem>
+          {/* <MenuItem>
             <Link
               color='inherit'
               underline="none"
@@ -77,7 +77,7 @@ const BasicMenu = () => {
             >
             {'Story'}
             </Link>
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem>
           <Link
               color='inherit'
@@ -87,7 +87,7 @@ const BasicMenu = () => {
             {'Life 2.0'}
             </Link>
           </MenuItem>
-          <MenuItem>
+          {/* <MenuItem>
             <Link
               color='inherit'
               underline="none"
@@ -95,7 +95,7 @@ const BasicMenu = () => {
             >
             {'Jebbery in 2023'}
             </Link>
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem>
             <Link
               color='inherit'
