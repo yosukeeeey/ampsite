@@ -1,0 +1,75 @@
+.blog-body{
+    background-color: #090a0e;
+}
+
+.blog-body-h1-title{
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+    border: white;
+    padding: 1% 1%;
+    border-style:solid;
+    border-radius: 3%;
+}
+.div-space{
+height: 1.5%;
+
+}
+
+@media screen and (min-width: 757px){
+    .split{
+        display: table;
+        width: 100%;    
+    }
+    .split-item{
+        display: table-cell;
+        padding: 50px;
+        width: 50%;
+    }
+    .split-left{
+        color: white;
+        background-color: #090a0e;
+    }
+    .split-left__inner{
+        height: 100%;
+    }
+    .split-right{
+        color: white;
+        background-color: #090a0e;
+    }
+    .split-right__inner{
+        height: 300px;
+        background-image: url(./Animation/LINE_TALK_black.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+}
+@media screen and (max-width: 757px){
+    .split-left{
+        color: white;
+        background-color: #090a0e;
+        text-align: center;
+    }
+    .split-left__inner{
+        height: 100%;
+        text-align: center;
+    }
+    .split-right{
+        color: white;
+        background-color: #090a0e;
+        text-align: center;
+    }
+    .split-right__inner{
+        height: 300px;
+        background-image: url(./Animation/LINE_TALK_black.jpg);
+        background-size: cover;
+        background-position: center center;
+        text-align: center;
+    }
+}
+
+.blog-text{
+    margin: 0;
+}

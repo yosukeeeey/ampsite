@@ -1,0 +1,10 @@
+
+@media screen and (max-width: 757px) {
+    .headerRight_object {
+        display: none;
+    }
+}
+
+.AppBarLife-header{
+    z-index: 2;
+}

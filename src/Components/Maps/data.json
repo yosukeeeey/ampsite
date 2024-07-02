@@ -1,0 +1,11 @@
+{
+    "points": [
+      { "id": 1, "lat": 35.5494, "lng": 139.7798 , "name":"point1", "remark":"this is point1"},
+      { "id": 2, "lat": 35.5523, "lng": 139.7814 , "name":"point2", "remark":"this is point2"},
+      { "id": 3, "lat": 35.5539, "lng": 139.7741 , "name":"point3", "remark":"this is point3"}
+    ],
+    "lines": [
+      { "start": 1, "end": 2, "type": "line" },
+      { "start": 2, "end": 3, "type": "curve" }
+    ]
+  }

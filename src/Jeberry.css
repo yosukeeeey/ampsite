@@ -1,0 +1,11 @@
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-text {
+    margin: 0;
+    align-items: center;
+}
