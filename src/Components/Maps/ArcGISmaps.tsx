@@ -1,7 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { loadModules } from 'esri-loader';
+import SceneView from "@arcgis/core/views/SceneView.js";
+import SceneLayer from "@arcgis/core/layers/SceneLayer.js";
 
 import { generateCurve, Point } from './calculate';
+import { error } from 'console';
 
 const ArcMap: React.FC = () => {
   
@@ -173,16 +176,14 @@ const VirtualMap: React.FC = () => {
   useEffect(() => {
     loadModules([
       'esri/Map',
-      'esri/views/MapView',
       'esri/views/SceneView',
       'esri/Graphic',
       'esri/symbols/SimpleLineSymbol',
       'esri/geometry/Polyline',
-      'esri/layers/VectorTileLayer',
       'esri/WebScene',
       'esri/Basemap',
-      'esri/layers/SceneLayer'
-    ]).then(([Map, MapView, SceneView, Graphic, SimpleLineSymbol, Polyline, Curve, VectorTileLayer, WebScene, Basemap, SceneLayer]) => {
+      'esri/widgets/BasemapGallery'
+    ]).then(([Map, SceneView, Graphic, SimpleLineSymbol, Polyline, WebScene, Basemap, BasemapGallery ]) => {
 
         // ArcGIS APIのCSSを読み込む
         const cssLink = document.createElement('link');
@@ -192,30 +193,168 @@ const VirtualMap: React.FC = () => {
 
         // 3Dマップを作成
         const map = new Map({
-          basemap: 'streets-vector',
+          basemap: 'dark-gray-vector',
           ground: 'world-elevation' // 3D地形を表示するために必要
         });
+        // // load web scene from ArcGIS Online
+        // const webscene = new WebScene({
+        //   portalItem: {
+        //     // autocasts as new PortalItem()
+        //     id: "cdb4415be735405ca2f2972ae23a2058"
+        //   }
+        // });
+
+        // // create the scene view
+        // const view = new SceneView({
+        //   container: "3DviewDiv",
+        //   map: webscene
+        // });
+
+        // const map = new Map({
+        //   basemap: new Basemap({
+        //     portalItem: {
+        //       id: "0560e29930dc4d5ebeb58c635c0909c9" // References the 3D Topographic Basemap
+        //     }
+        //   })
+        // });
+
+        // const view = new SceneView({
+        //   container: "3DviewDiv",
+        //   map: map,
+        //   camera: {
+        //     position: {
+        //       longitude: -74.03423765,
+        //       latitude: 40.69173202,
+        //       z: 1620.71497
+        //     },
+        //     heading: 57.02,
+        //     tilt: 56.97
+        //   } // Manhattan, NY
+        // });
+
+        // const basemapGallery = new BasemapGallery({
+        //   view: view
+        // });
+
+        // // Add the widget to the top-right corner of the view
+        // view.ui.add(basemapGallery, {
+        //   position: "top-right"
+        // });
+
 
         // 3Dシーンビューを作成
-        const view = new SceneView({
-          container: '3DviewDiv',
-          map: map,
-          camera: {
-            position: {
-              x: 139.7544,
-              y: 35.5554,
-              z: 500
-            },
-            tilt: 45
+        // const view = new SceneView({
+        //   container: '3DviewDiv',
+        //   map: map,
+        //   camera: {
+        //     position: {
+        //       x: -109.7544,
+        //       y: 35.5554,
+        //       z: 500
+        //     },
+        //     tilt: 45
+        //   }
+        // });
+
+        //Trailheads feature layer (points)
+        // const sceneLayer = new SceneLayer({
+        //   url: "https://basemaps3d.arcgis.com/arcgis/rest/services/OpenStreetMap3D_Buildings_v1/SceneServer/layers/0"
+        // });
+        // Create SceneLayer and add to the map
+        // const sceneLayer = new SceneLayer({
+        //   portalItem: {
+        //     id : "a457834a6cb449cd958502d6e98ba305"
+        //     // id: "0560e29930dc4d5ebeb58c635c0909c9"
+        //     // id: "ca0470dbbddb4db28bad74ed39949e25"
+        //     // url: "https://basemaps3d.arcgis.com/arcgis/rest/services/OpenStreetMap3D_Buildings_v1/SceneServer"
+        //   },
+        //   popupEnabled: false
+        // });
+        // map.add(sceneLayer);
+        // sceneLayer.load().
+        // then((value) =>
+        //   {
+        //     map.add(sceneLayer);
+        //   }
+        // ).catch((error: any) => {console.log(error)});
+          
+
+        // Create the SceneView
+        // const view = new SceneView({
+        //   container: "3DviewDiv",
+        //   map: map,
+        //   camera: {
+        //     position: [-74.0338, 40.6913, 707],
+        //     tilt: 81,
+        //     heading: 50
+        //   }
+        // });
+
+        // Create SceneLayer and add to the map
+        // const sceneLayer = new SceneLayer({
+        //   portalItem: {
+        //     id: "2e0761b9a4274b8db52c4bf34356911e"
+        //   },
+        //   popupEnabled: false
+        // });
+        // if(sceneLayer.isResolved()){
+        //   console.log(sceneLayer.geometryType)
+        // }
+        // map.add(sceneLayer);
+
+        // // Create MeshSymbol3D for symbolizing SceneLayer
+        // const symbol = {
+        //   type: "mesh-3d", // autocasts as new MeshSymbol3D()
+        //   symbolLayers: [
+        //     {
+        //       type: "fill", // autocasts as new FillSymbol3DLayer()
+        //       // If the value of material is not assigned, the default color will be grey
+        //       material: {
+        //         color: [244, 247, 134]
+        //       }
+        //     }
+        //   ]
+        // };
+        // Add the renderer to sceneLayer
+        // sceneLayer.renderer = {
+        //   type: "simple", // autocasts as new SimpleRenderer()
+        //   symbol: symbol
+        // };
+        const scene = new WebScene({
+          portalItem: {
+            // autocasts as new PortalItem()
+            // id: "3a9976baef9240ab8645ee25c7e9c096"
+            id: "5a1365328b4943f09a54cf5fd1205707" 
+            //id: "ca7baa183c6e4c998a668a6fadc5fc49"
           }
         });
 
-        //Trailheads feature layer (points)
         const sceneLayer = new SceneLayer({
-          url: "https://basemaps3d.arcgis.com/arcgis/rest/services/OpenStreetMap3D_Buildings_v1/SceneServer/layers/0"
+          portalItem: {
+            id: "ca7baa183c6e4c998a668a6fadc5fc49"
+          },
+          popupEnabled: false
+        });
+        scene.add(sceneLayer);
+        
+
+        /************************************************************
+         * Set the WebScene instance to the map property in a SceneView.
+         ************************************************************/
+        const view = new SceneView({
+          map: scene,
+          container: "3DviewDiv",
+          padding: {
+            top: 40
+          }
         });
 
-        map.add(sceneLayer);
+
+        
+
+        
+        
+
 
         // 曲線を表現するCurveオブジェクトを作成
         // ベジエ曲線の制御点
@@ -645,14 +784,212 @@ const WidgetMap: React.FC = () => {
     return <div id="WidgetviewDiv" style={{ height: '400px' }}></div>;
 };
 
+const TimeMap: React.FC = () => {
+  const [polylineData, setPolylineData] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // ここでデータを取得し、polylineDataに設定
+      // データがサーバーから取得される場合、fetchやaxiosを使用してください
+      const fetchedData = [[135.90, 34.5],[138.0, 36.0],[139.5, 37.0],[140.5, 34.2]];/* データを取得するロジック */
+      setPolylineData(fetchedData);
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const initializeMap = async () => {
+      try {
+        const [Map, MapView, Graphic, GraphicsLayer, Polyline] = await loadModules([
+          'esri/Map',
+          'esri/views/MapView',
+          'esri/Graphic',
+          'esri/layers/GraphicsLayer',
+          'esri/geometry/Polyline'
+        ]);
+
+        const map = new Map({
+          basemap: 'streets-navigation-vector'
+        });
+
+        const view = new MapView({
+          container: 'mapViewDiv',
+          map: map,
+          center: [139.6917, 35.6895],
+          zoom: 12
+        });
+
+        const graphicsLayer = new GraphicsLayer();
+        map.add(graphicsLayer);
+
+        // polylineDataからポリラインを描画
+        polylineData.forEach((polylineCoords, index) => {
+          const polylineGeometry = new Polyline({
+            paths: polylineCoords, // ポリラインの座標データ
+            spatialReference: { wkid: 4326 } // 座標系（WGS 1984）
+          });
+
+          const polylineGraphic = new Graphic({
+            geometry: polylineGeometry,
+            symbol: {
+              type: 'simple-line',
+              color: [226, 119, 40],
+              width: 2
+            }
+          });
+
+          graphicsLayer.add(polylineGraphic);
+
+          // ポリラインごとにボタンを作成
+          const button = document.createElement('button');
+          button.textContent = `Polyline ${index + 1}`;
+          button.addEventListener('click', () => {
+            // ここにボタンが押されたときの処理を記述
+            console.log(`Button for Polyline ${index + 1} clicked`);
+          });
+
+          // ボタンを表示
+          document.getElementById('buttonContainer')?.appendChild(button);
+        });
+      } catch (error) {
+        console.error('Error loading ArcGIS modules:', error);
+      }
+    };
+
+    initializeMap();
+  }, [polylineData]);
+
+  return (
+    <div>
+      <div id="mapViewDiv" style={{ height: '400px' }}></div>
+      <div id="buttonContainer"></div>
+    </div>
+  );
+};
+
+const FeatureArcMap: React.FC = () => {
+
+  useEffect(() => {
+    const initMap = async () => {
+      try {
+        const [Map, MapView, Graphic, Point, Polyline, SimpleLineSymbol, FeatureLayer] = await loadModules([
+          'esri/Map',
+          'esri/views/MapView',
+          'esri/Graphic',
+          'esri/geometry/Point',
+          'esri/geometry/Polyline',
+          'esri/symbols/SimpleLineSymbol',
+          'esri/PopupTemplate',
+          'esri/layers/VectorTileLayer',
+          'esri/layers/FeatureLayer',
+          'esri/WebMap',
+          'esri/widgets/TimeSlider'
+        ]);
+
+        // ArcGIS APIのCSSを読み込む
+        const cssLink = document.createElement('link');
+        cssLink.href = 'https://js.arcgis.com/4.23/esri/themes/light/main.css';
+        cssLink.rel = 'stylesheet';
+        document.head.appendChild(cssLink);
+
+        // Mapオブジェクトの作成
+        const map = new Map({
+          basemap: 'dark-gray-vector',
+        });
+
+        const view = new MapView({
+          container: 'featureViewDiv',
+          map,
+          center: [139.7544, 35.5554],
+          zoom: 8
+        });
+
+        const MakePoint = (P: Point, Symbol: any, num: number) : typeof Graphic => {
+          const pointGraphic = new Graphic({
+            geometry: new Point({ x: P.lon, y: P.lat }),
+            Symbol: Symbol,
+            attributes: {OBJECTID: num}
+          });
+          return pointGraphic
+        };
+
+        // curve
+        const A: Point = {lon: 139.8701 , lat: 35.3401 , alt: 1};
+        const B: Point = {lon: 139.6917 , lat: 35.6895 , alt: 2};
+
+        const pointSymbolSample = {
+          type: 'simple-marker',
+          color: [0, 0, 255], // 色: RGB
+          size: 8
+        };
+
+        const graphics:any = [];
+        const pointGraphicA = MakePoint(A, pointSymbolSample,1);
+        const pointGraphicB = MakePoint(B, pointSymbolSample,2);
+        
+        graphics.push([pointGraphicA, pointGraphicB]);
+
+           const makeftLayer = (graphics: any) => {
+            const ftLayer = new FeatureLayer({
+              source: graphics,
+              objectIdField: "OBJECTID",
+              geometryType: "point",
+              fields: [{
+                name: "OBJECTID",
+                type: "oid"
+              }],
+              popupTemplate: "",
+              renderer: {
+                type: "simple",  // autocasts as new SimpleRenderer()
+                symbol: {
+                  type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
+                  size: 6,
+                  color: "black",
+                  outline: {  // autocasts as new SimpleLineSymbol()
+                    width: 0.5,
+                    color: "white"
+                  }
+                }
+              }
+              
+            });
+              return ftLayer;
+          }
+
+          const addLayer = () => {
+            const layer = makeftLayer(graphics).load();
+            map.add(layer);
+          }
+
+          
+          addLayer();
+
+
+        
+      }catch{
+
+      }
+    }
+
+    initMap();
+  }, []);
+
+  return(
+    <div>
+      <div id="featureViewDiv" style={{ height: '400px' }}></div>
+    </div>
+  )
+}
+
 
 export default function Maps(){
   return(
     <div>
       <ArcMap />
+      {/* <TImeSliderMap /> */}
       <VirtualMap />
-      <TImeSliderMap />
-      <WidgetMap />
+      <FeatureArcMap />
     </div>
     
   )
